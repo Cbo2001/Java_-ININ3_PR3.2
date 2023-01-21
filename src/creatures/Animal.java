@@ -48,6 +48,22 @@ public class Animal {
                 ", alive=" + alive +
                 '}';
     }
+
+    public void sell(Human seller, Human buyer, Double price){
+        if(buyer.cash < price){
+            System.out.println("Goń się Typie! Nie masz Hajsu Kolo");
+        } else if (seller.pet != this) {
+            System.out.println("Co chcesz sprzedać? BĄKA z gaci!");
+        }
+        else {
+            seller.cash += price;
+            buyer.cash -= price;
+            buyer.pet = seller.pet;
+            seller.pet = null;
+            System.out.println("Transakcja zakończona: POMYŚLNIE");
+        }
+    }
+
 }
 
 

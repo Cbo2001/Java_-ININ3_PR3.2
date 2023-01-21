@@ -5,20 +5,23 @@ import devices.Phone;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-public class Human {
+public class Human extends  Animal{
     public String firstName;
     String lastName;
-    Double cash;
+    public Double cash;
     Animal pet;
-    Phone phone;
-    private Car auto;
-    private Double salary= 2000.0;
+    public Phone phone;
+    public Car auto;
+    private Double salary;
 
-
-
-    public Human(Double salary) {
-        this.salary = salary;
+    public Human(String firstName, Double salary) {
+        super("homo sapiens");
+        this.firstName = firstName;
+        this.salary = 2000.0;
+        this.weight =70.0;
     }
+
+
 
     public Car getAuto() {
         return this.auto;
@@ -61,9 +64,10 @@ public class Human {
         } else {
             System.out.println("\nZapisz się na studia i znajdź nową robotę albo idź po podwyżkę.");
         }
-
-
-
+    }
+@Override
+    public void sell(Human seller, Human buyer, Double price){
+        System.out.println("Handel ludzmi jest ZAKAZANY!!! 997 ZGŁOŚ SIĘ!!!");
     }
 
 

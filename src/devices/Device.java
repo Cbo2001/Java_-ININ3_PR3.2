@@ -1,5 +1,7 @@
 package devices;
 
+import creatures.Human;
+
 public abstract class Device {
 
     public String model;
@@ -16,4 +18,7 @@ public abstract class Device {
     }
 
     public  abstract  void turnOn();
+
+
+    public abstract void sell(Human seller, Human buyer, Double price);
 }

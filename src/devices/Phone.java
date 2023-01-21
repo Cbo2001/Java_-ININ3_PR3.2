@@ -1,5 +1,7 @@
 package devices;
 
+import creatures.Human;
+
 public class Phone extends Device{
 
     Double screenSize;
@@ -33,5 +35,20 @@ public class Phone extends Device{
 
     public void installAnApp(String app) {
         System.out.println("App: " + app + ", succesfully installed!");
+    }
+    @Override
+    public void sell(Human seller, Human buyer, Double price){
+       if(buyer.cash < price){
+           System.out.println("Goń się Typie! Nie masz Hajsu Kolo");
+       } else if (seller.phone != this) {
+           System.out.println("Co chcesz sprzedać? Cegłe!");
+       }
+       else {
+           seller.cash += price;
+           buyer.cash -= price;
+           buyer.phone = seller.phone;
+           seller.phone = null;
+           System.out.println("Transakcja zakończona: POMYŚLNIE");
+       }
     }
 }
