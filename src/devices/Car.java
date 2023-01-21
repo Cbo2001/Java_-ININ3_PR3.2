@@ -1,6 +1,6 @@
 package devices;
 
-public class Car {
+public class Car extends Device{
     final String producer;
     public String model;
     public Integer yearOfProduction;

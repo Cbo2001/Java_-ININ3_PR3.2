@@ -1,6 +1,6 @@
 package devices;
 
-public class Phone {
+public class Phone extends Device{
     String producer;
     String model;
     Double screenSize;
