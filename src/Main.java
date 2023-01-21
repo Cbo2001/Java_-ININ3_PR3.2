@@ -40,6 +40,15 @@ public class Main {
         seat.value=5500.0;
         andrzej.setAuto(seat);
 
+        System.out.println("\nZadanie 6\n");
+        Car seat2 = new Car("seat", "altea", 2011, 178321.3);
+        System.out.println(seat.equals(fiat));
+        System.out.println(seat.equals(seat2));
+        System.out.println(seat.equals(seat));
+        System.out.println(seat);
+        System.out.println(seat2);
+        System.out.println(azor);
+
     }
 
 }

@@ -15,5 +15,14 @@ public class Car {
         this.millage = millage;
     }
 
-
+    @Override
+    public String toString() {
+        return "Car{" +
+                "producer='" + producer + '\'' +
+                ", model='" + model + '\'' +
+                ", yearOfProduction=" + yearOfProduction +
+                ", millage=" + millage +
+                ", value=" + value +
+                '}';
+    }
 }

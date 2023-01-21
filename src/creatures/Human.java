@@ -36,6 +36,14 @@ public class Human {
     }
 
 
+    @Override
+    public String toString() {
+        return "Human{" +
+                "pet=" + pet +
+                ", auto=" + auto +
+                ", salary=" + salary +
+                '}';
+    }
 
     public void setAuto(Car auto) {
         if (this.salary > auto.value) {
@@ -47,7 +55,12 @@ public class Human {
         } else {
             System.out.println("\nZapisz się na studia i znajdź nową robotę albo idź po podwyżkę.");
         }
+
+
+
     }
+
+
 
 
 }
