@@ -34,6 +34,7 @@ public class Main {
         andrzej.setSalary(-200.0);
         andrzej.setSalary(2500.09);
 
+        System.out.println("\nZadanie 5\n");
         Car seat = new Car("seat", "altea", 2011, 178321.3);
         //seat.value=1500.0;
         seat.value=5500.0;
