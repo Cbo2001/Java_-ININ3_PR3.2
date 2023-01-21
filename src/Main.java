@@ -24,7 +24,7 @@ public class Main {
         System.out.println("\nZadanie 2 Dodawanie AUTA\n  Model auta: " + fiat.model);
         System.out.println("  Przebieg: " + fiat.millage);
         Human andrzej = new Human(2000.50);
-        andrzej.setAuto(fiat);
+        //andrzej.setAuto(fiat);
         System.out.println("Samochód Andrzeja to  " + andrzej.getAuto());
         System.out.println(andrzej);
         System.out.println(fiat);
@@ -33,6 +33,12 @@ public class Main {
         andrzej.getSalary();
         andrzej.setSalary(-200.0);
         andrzej.setSalary(2500.09);
+
+        Car seat = new Car("seat", "altea", 2011, 178321.3);
+        //seat.value=1500.0;
+        seat.value=5500.0;
+        andrzej.setAuto(seat);
+
     }
 
 }

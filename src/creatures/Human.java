@@ -18,6 +18,7 @@ public class Human {
         return this.auto;
     }
 
+
     public Double getSalary() {
         LocalDateTime dateTime = LocalDateTime.now();
         System.out.println("\nData/godz pobrania danych: " + dateTime.format(DateTimeFormatter.ofPattern("d.M.y HH:mm:ss")));
@@ -37,7 +38,15 @@ public class Human {
 
 
     public void setAuto(Car auto) {
-        this.auto = auto;
+        if (this.salary > auto.value) {
+            System.out.println("\nUdało się kupić auto za gotówkę.");
+            this.auto = auto;
+        } else if (this.salary > (auto.value / 12.0)) {
+            System.out.println("\nUdało się kupić auto na kredyt (no trudno).");
+            this.auto = auto;
+        } else {
+            System.out.println("\nZapisz się na studia i znajdź nową robotę albo idź po podwyżkę.");
+        }
     }
 
 
