@@ -5,7 +5,7 @@ import devices.Phone;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-public class Human extends  Animal{
+public class Human extends Animal implements Salleable{
     public String firstName;
     String lastName;
     public Double cash;
@@ -69,8 +69,5 @@ public class Human extends  Animal{
     public void sell(Human seller, Human buyer, Double price){
         System.out.println("Handel ludzmi jest ZAKAZANY!!! 997 ZGŁOŚ SIĘ!!!");
     }
-
-
-
 
 }

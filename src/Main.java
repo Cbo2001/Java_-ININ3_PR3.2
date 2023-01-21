@@ -1,5 +1,6 @@
 import creatures.Animal;
 import creatures.Human;
+import creatures.Pet;
 import devices.Car;
 import devices.Phone;
 
@@ -9,7 +10,9 @@ public class Main {
     public static void main(String[] args) {
 
         System.out.println("\nZadanie 1: ");
-        Animal azor = new Animal("pies");
+        Pet azor = new Pet("pies") {
+
+        };
         azor.name = "Azor";
         azor.feed();
         azor.takeFofAWalk();
@@ -55,7 +58,7 @@ public class Main {
         honor.turnOn();
         seat.turnOn();
 
-        /*System.out.println("\nZadanie 8\n");
+        System.out.println("\nZadanie 8\n");
 
         Car passat = new Car("VW", "Passat", 2010);
         Human me = new Human("Kacper", 4000.2);
@@ -63,7 +66,7 @@ public class Main {
         me.auto = passat;
         brotherInLow.cash = 9999.0;
 
-        passat.sell(me, brotherInLow, 3000.0);*/
+        passat.sell(me, brotherInLow, 3000.0);
 
         //efekt jaki chcemy uzyskać:
         //me.car = null

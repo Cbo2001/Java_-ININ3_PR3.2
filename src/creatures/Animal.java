@@ -1,9 +1,10 @@
 package creatures;
 
-public class Animal {
+
+ public abstract class Animal implements Salleable,Feedable {
 
     public String name;
-    final String species;
+    public String species;
     public Double weight;
     Boolean alive;
 
@@ -48,7 +49,7 @@ public class Animal {
                 ", alive=" + alive +
                 '}';
     }
-
+@Override
     public void sell(Human seller, Human buyer, Double price){
         if(buyer.cash < price){
             System.out.println("Goń się Typie! Nie masz Hajsu Kolo");

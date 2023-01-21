@@ -1,8 +1,9 @@
 package devices;
 
 import creatures.Human;
+import creatures.Salleable;
 
-public class Car extends Device{
+public class Car extends Device implements Salleable {
 
     public Double millage;
     public Double value;
