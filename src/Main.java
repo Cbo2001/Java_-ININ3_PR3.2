@@ -1,6 +1,7 @@
 import creatures.Animal;
 import creatures.Human;
 import devices.Car;
+import devices.Phone;
 
 import java.io.Console;
 
@@ -49,6 +50,9 @@ public class Main {
         System.out.println(seat2);
         System.out.println(azor);
 
+
+        System.out.println("\nZadanie 7\n");
+        Phone xiaomi = new Phone("Honor", "x13 Pro", 6.0, "Android 12");
     }
 
 }
