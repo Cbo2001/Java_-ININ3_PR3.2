@@ -50,9 +50,10 @@ public class Main {
         System.out.println(seat2);
         System.out.println(azor);
 
-
         System.out.println("\nZadanie 7\n");
-        Phone xiaomi = new Phone("Honor", "x13 Pro", 6.0, "Android 12");
+        Phone honor = new Phone("Honor", "x13 Pro", 6.0, "Android 12");
+        honor.turnOn();
+        seat.turnOn();
     }
 
 }

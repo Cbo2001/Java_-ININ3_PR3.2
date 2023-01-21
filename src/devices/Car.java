@@ -1,9 +1,7 @@
 package devices;
 
 public class Car extends Device{
-    final String producer;
-    public String model;
-    public Integer yearOfProduction;
+
     public Double millage;
     public Double value;
 
@@ -25,4 +23,11 @@ public class Car extends Device{
                 ", value=" + value +
                 '}';
     }
-}
+
+    @Override
+    public void turnOn() {
+        System.out.println("Przekręcam kluczyk");
+        System.out.println("...czekam...");
+        System.out.println("...modlę się w intencji akumulatora");
+        System.out.println("ODPALA");
+}}

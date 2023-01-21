@@ -1,8 +1,7 @@
 package devices;
 
 public class Phone extends Device{
-    String producer;
-    String model;
+
     Double screenSize;
     String androidiOS;
 
@@ -23,12 +22,13 @@ public class Phone extends Device{
                 '}';
     }
 
+    @Override
     public void turnOn() {
-        System.out.println("Turning on phone...1%...30%...80%...99%...Phone ready!");
+        System.out.println("Telefon się uruchamia ...1%...30%...80%...99%... GOTOWE!");
     }
 
     public void mute() {
-        System.out.println("Phone muted!");
+        System.out.println("Telefon jest wyciszony!");
     }
 
     public void installAnApp(String app) {
