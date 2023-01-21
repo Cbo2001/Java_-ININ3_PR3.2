@@ -1,13 +1,19 @@
 package creatures;
 import devices.Car;
+import devices.Phone;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 public class Human {
+    public String firstName;
+    String lastName;
+    Double cash;
     Animal pet;
+    Phone phone;
     private Car auto;
     private Double salary= 2000.0;
+
 
 
     public Human(Double salary) {
