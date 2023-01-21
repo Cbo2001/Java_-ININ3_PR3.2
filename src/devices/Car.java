@@ -3,9 +3,9 @@ package devices;
 public class Car {
     final String producer;
     public String model;
-
     public Integer yearOfProduction;
     public Double millage;
+    public Double value;
 
 
     public Car(String producer, String model, Integer yearOfProduction, Double millage) {

@@ -9,6 +9,7 @@ public class Human {
     private Car auto;
     private Double salary= 2000.0;
 
+
     public Human(Double salary) {
         this.salary = salary;
     }
