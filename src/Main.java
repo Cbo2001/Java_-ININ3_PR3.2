@@ -31,6 +31,8 @@ public class Main {
 
         System.out.println("\nZadania 3 i 4");
         andrzej.getSalary();
+        andrzej.setSalary(-200.0);
+        andrzej.setSalary(2500.09);
     }
 
 }

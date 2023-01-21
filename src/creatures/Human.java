@@ -14,7 +14,7 @@ public class Human {
     }
 
     public Car getAuto() {
-        return auto;
+        return this.auto;
     }
 
     public Double getSalary() {
@@ -22,6 +22,15 @@ public class Human {
         System.out.println("\nData/godz pobrania danych: " + dateTime.format(DateTimeFormatter.ofPattern("d.M.y HH:mm:ss")));
         System.out.print("Aktualna wartość wypłaty: " + this.salary);
         return this.salary;
+    }
+
+    public void setSalary(Double salary) {
+        if (salary >= 0) {
+            System.out.println("\nNowe dane zostały wysłane do systemu księgowego.\n");
+            System.out.println("Należy koniecznie odebrać aneks od umowy od pani Hani z kadr.");
+            System.out.println("ZUS i US już wiedzą o zmianie wypłaty i nie ma sensu ukrywać dochodu.");
+            this.salary = salary;
+        } else System.out.println("\n\nNieprawidłowa wartość! Wynagrodzenie musi mieć wartość DODATNIĄ!!!");
     }
 
 
