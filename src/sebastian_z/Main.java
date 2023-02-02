@@ -1,10 +1,9 @@
-import creatures.Animal;
-import creatures.Human;
-import creatures.Pet;
-import devices.Car;
-import devices.Phone;
+package sebastian_z;
 
-import java.io.Console;
+import sebastian_z.creatures.Human;
+import sebastian_z.creatures.Pet;
+import sebastian_z.devices.Car;
+import sebastian_z.devices.Phone;
 
 public class Main {
     public static void main(String[] args) {
@@ -64,15 +63,17 @@ public class Main {
         Human me = new Human("Kacper", 4000.2);
         Human brotherInLow = new Human("Piotrek", 3200.0);
         me.auto = passat;
-        brotherInLow.cash = 9999.0;
-
+        //me.auto = null;
+        //brotherInLow.cash = 100.0;
+        brotherInLow.cash = 10000.0;
         passat.sell(me, brotherInLow, 3000.0);
 
-        //efekt jaki chcemy uzyskać:
-        //me.car = null
-        //brotherInLow.car = passat
-        //me.cash = 3000.0
-        //brotherInLow.cash = 6999.0
+        honor.sell(me, brotherInLow, 1000.0 );
+
+        azor.sell(me, brotherInLow, 500.0);
+
+        andrzej.sell(me, brotherInLow, 20.0);
+
 
         System.out.println("\nZadanie 9\n");
 

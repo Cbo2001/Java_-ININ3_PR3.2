@@ -1,11 +1,12 @@
-package creatures;
-import devices.Car;
-import devices.Phone;
+package sebastian_z.creatures;
+import sebastian_z.devices.Car;
+import sebastian_z.devices.Phone;
+import sebastian_z.Salleable;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-public class Human extends Animal implements Salleable{
+public class Human extends Animal implements Salleable {
     public String firstName;
     String lastName;
     public Double cash;
@@ -17,8 +18,9 @@ public class Human extends Animal implements Salleable{
     public Human(String firstName, Double salary) {
         super("homo sapiens");
         this.firstName = firstName;
-        this.salary = 2000.0;
+        this.salary = 0.0;
         this.weight =70.0;
+        this.cash=0.0;
     }
 
 

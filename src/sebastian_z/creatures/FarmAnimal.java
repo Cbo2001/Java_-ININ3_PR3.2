@@ -1,4 +1,4 @@
-package creatures;
+package sebastian_z.creatures;
 
 public class FarmAnimal extends Animal implements Edbile{
 
@@ -10,8 +10,5 @@ public class FarmAnimal extends Animal implements Edbile{
 
     }
 
-    @Override
-    public void feed(Double foodWeight) {
 
-    }
 }

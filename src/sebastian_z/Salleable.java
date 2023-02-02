@@ -1,6 +1,6 @@
-package creatures;
+package sebastian_z;
 
-import creatures.Human;
+import sebastian_z.creatures.Human;
 
 public interface Salleable {
     void sell(Human seller, Human buyer, Double price);

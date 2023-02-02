@@ -1,7 +1,7 @@
-package devices;
+package sebastian_z.devices;
 
-import creatures.Human;
-import creatures.Salleable;
+import sebastian_z.creatures.Human;
+import sebastian_z.Salleable;
 
 public class Car extends Device implements Salleable {
 

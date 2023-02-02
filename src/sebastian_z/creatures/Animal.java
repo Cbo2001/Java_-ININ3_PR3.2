@@ -1,7 +1,9 @@
-package creatures;
+package sebastian_z.creatures;
 
 
- public abstract class Animal implements Salleable,Feedable {
+import sebastian_z.Salleable;
+
+public abstract class Animal implements Salleable{
 
     public String name;
     public String species;

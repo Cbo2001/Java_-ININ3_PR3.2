@@ -1,6 +1,6 @@
-package devices;
+package sebastian_z.devices;
 
-import creatures.Human;
+import sebastian_z.creatures.Human;
 
 public class Phone extends Device{
 
