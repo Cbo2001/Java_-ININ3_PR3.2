@@ -2,8 +2,12 @@ package sebastian_z.devices;
 
 import sebastian_z.creatures.Human;
 
+import java.util.List;
+
 public class Phone extends Device{
 
+    private static final String DEFAULT_APP_VERSION = "latest-stable";
+    private static final String DEFAULT_APP_SERVER = "https://mTalent-apps.com";
     Double screenSize;
     String androidiOS;
 
@@ -35,6 +39,24 @@ public class Phone extends Device{
 
     public void installAnApp(String app) {
         System.out.println("App: " + app + ", succesfully installed!");
+    }
+
+    public void installAnApp(List<String> apps) {
+        for (String appName : apps) {
+            this.installAnApp(appName);
+        }
+    }
+
+    public void installAnApp(String appName, String version) {
+        this.installAnApp(appName, version, DEFAULT_APP_SERVER);
+    }
+
+    public void installAnApp(String appName, String version, String server) {
+        System.out.println("pobieram");
+        System.out.println("sprawdzam miejsce");
+        System.out.println("sprawdzam kontrole rodzicielską");
+        System.out.println("ups, nie możesz zainstalować");
+        //wypisanie co dokładnie instaluje
     }
     @Override
     public void sell(Human seller, Human buyer, Double price){
