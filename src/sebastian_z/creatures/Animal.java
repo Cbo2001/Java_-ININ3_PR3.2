@@ -1,9 +1,10 @@
 package sebastian_z.creatures;
 
 
+import sebastian_z.Feedable;
 import sebastian_z.Salleable;
 
-public abstract class Animal implements Salleable{
+public abstract class Animal implements Salleable, Feedable {
 
     public String name;
     public String species;

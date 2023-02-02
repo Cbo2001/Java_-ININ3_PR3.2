@@ -11,4 +11,8 @@ public class FarmAnimal extends Animal implements Edbile{
     }
 
 
+    @Override
+    public void feed(Double foodWeight) {
+
+    }
 }

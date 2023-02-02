@@ -1,5 +1,6 @@
 package sebastian_z;
 
+import sebastian_z.creatures.FarmAnimal;
 import sebastian_z.creatures.Human;
 import sebastian_z.creatures.Pet;
 import sebastian_z.devices.Car;
@@ -77,6 +78,10 @@ public class Main {
 
         System.out.println("\nZadanie 9\n");
 
+        FarmAnimal byk = new FarmAnimal("bydło");
+        me.farmAnimal = byk;
+        byk.beEaten();
+        System.out.println(byk);
     }
 
 }

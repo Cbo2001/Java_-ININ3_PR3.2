@@ -15,6 +15,8 @@ public class Human extends Animal implements Salleable {
     public Car auto;
     private Double salary;
 
+    public FarmAnimal farmAnimal;
+
     public Human(String firstName, Double salary) {
         super("homo sapiens");
         this.firstName = firstName;
@@ -72,4 +74,8 @@ public class Human extends Animal implements Salleable {
         System.out.println("Handel ludzmi jest ZAKAZANY!!! 997 ZGŁOŚ SIĘ!!!");
     }
 
+    @Override
+    public void feed(Double foodWeight) {
+
+    }
 }
