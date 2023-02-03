@@ -3,8 +3,7 @@ package sebastian_z;
 import sebastian_z.creatures.FarmAnimal;
 import sebastian_z.creatures.Human;
 import sebastian_z.creatures.Pet;
-import sebastian_z.devices.Car;
-import sebastian_z.devices.Phone;
+import sebastian_z.devices.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -24,7 +23,7 @@ public class Main {
         azor.takeFofAWalk();
         azor.takeFofAWalk();
 
-        Car fiat = new Car("fiat", "bravo", 2010);
+        Electric fiat = new Electric("fiat", "bravo", 2010);
         System.out.println("\nZadanie 2 Dodawanie AUTA\n  Model auta: " + fiat.model);
         System.out.println("  Przebieg: " + fiat.millage);
         Human andrzej = new Human("Andrzej", 1500.0);
@@ -39,13 +38,13 @@ public class Main {
         andrzej.setSalary(2500.09);
 
         System.out.println("\nZadanie 5\n");
-        Car seat = new Car("seat", "altea", 2011);
+        Lpg seat = new Lpg("seat", "altea", 2011);
         //seat.value=1500.0;
         seat.value=5500.0;
         andrzej.setAuto(seat);
 
         System.out.println("\nZadanie 6\n");
-        Car seat2 = new Car("seat", "altea", 2011);
+        Disel seat2 = new Disel("seat", "altea", 2011);
         System.out.println(seat.equals(fiat));
         System.out.println(seat.equals(seat2));
         System.out.println(seat.equals(seat));
@@ -54,13 +53,13 @@ public class Main {
         System.out.println(azor);
 
         System.out.println("\nZadanie 7\n");
-        Phone honor = new Phone("Honor", "x13 Pro", 6.0, "Android 12");
+        Phone honor = new Phone("Honor", "x13 Pro", 2017);
         honor.turnOn();
         seat.turnOn();
 
         System.out.println("\nZadanie 8\n");
 
-        Car passat = new Car("VW", "Passat", 2010);
+        Electric passat = new Electric("VW", "Passat", 2010);
         Human me = new Human("Kacper", 4000.2);
         Human brotherInLow = new Human("Piotrek", 3200.0);
         me.auto = passat;
@@ -82,6 +81,12 @@ public class Main {
         me.farmAnimal = byk;
         byk.beEaten();
         System.out.println(byk);
+
+        System.out.println("\nZadanie 10\n");
+        fiat.refuel();
+        seat.refuel();
+        seat2.refuel();
+
     }
 
 }

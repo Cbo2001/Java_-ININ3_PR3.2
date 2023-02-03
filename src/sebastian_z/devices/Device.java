@@ -9,12 +9,14 @@ public abstract class Device {
     public Integer yearOfProduction;
     public Double value;
 
-    public Device(String model, String producer, Integer yearOfProduction, Double value) {
-        this.model = model;
-        this.producer = producer;
-        this.yearOfProduction = yearOfProduction;
+    public Device(String producer, String model, Integer yearOfProduction) {
+        this.model = this.model;
+        this.producer = this.producer;
+        this.yearOfProduction = this.yearOfProduction;
         this.value = 0.0;
     }
+
+
 
     @Override
     public String toString() {

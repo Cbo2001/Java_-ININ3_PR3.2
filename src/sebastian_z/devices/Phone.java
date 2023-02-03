@@ -8,14 +8,12 @@ public class Phone extends Device{
 
     private static final String DEFAULT_APP_VERSION = "latest-stable";
     private static final String DEFAULT_APP_SERVER = "https://mTalent-apps.com";
+    public final static String DEFAULT_PROTOCOLE="http://";
     Double screenSize;
     String androidiOS;
 
-    public Phone(String producer, String model, Double screenSize, String androidiOS) {
-        this.producer = producer;
-        this.model = model;
-        this.screenSize = screenSize;
-        this.androidiOS = androidiOS;
+    public Phone(String producer, String model, Integer yearOfProduction) {
+        super(producer, model, yearOfProduction);
     }
 
     @Override

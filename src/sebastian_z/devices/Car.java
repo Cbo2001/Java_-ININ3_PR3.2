@@ -3,16 +3,14 @@ package sebastian_z.devices;
 import sebastian_z.creatures.Human;
 import sebastian_z.Salleable;
 
-public class Car extends Device implements Salleable {
+public abstract class Car extends Device implements Salleable {
 
     public Double millage;
     public Double value;
 
 
     public Car(String producer, String model, Integer yearOfProduction) {
-        this.producer = producer;
-        this.model = model;
-        this.yearOfProduction = yearOfProduction;
+        super(producer, model, yearOfProduction);
         this.millage = 0.0;
     }
 
@@ -52,6 +50,8 @@ public class Car extends Device implements Salleable {
             seller.auto = null;
             System.out.println("Transakcja zakończona: POMYŚLNIE");
         }
+
     }
+    public abstract void refuel();
 }
 
