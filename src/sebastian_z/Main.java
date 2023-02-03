@@ -26,9 +26,10 @@ public class Main {
         Electric fiat = new Electric("fiat", "bravo", 2010);
         System.out.println("\nZadanie 2 Dodawanie AUTA\n  Model auta: " + fiat.model);
         System.out.println("  Przebieg: " + fiat.millage);
-        Human andrzej = new Human("Andrzej", 1500.0);
+        Human andrzej = new Human("Andrzej", 5);
         //andrzej.setAuto(fiat);
-        System.out.println("Samochód Andrzeja to  " + andrzej.getAuto());
+        System.out.print("Samochód Andrzeja to  ");
+        andrzej.getCar(0);
         System.out.println(andrzej);
         System.out.println(fiat);
 
@@ -41,7 +42,7 @@ public class Main {
         Lpg seat = new Lpg("seat", "altea", 2011);
         //seat.value=1500.0;
         seat.value=5500.0;
-        andrzej.setAuto(seat);
+        andrzej.setCar(seat, 1);
 
         System.out.println("\nZadanie 6\n");
         Disel seat2 = new Disel("seat", "altea", 2011);
@@ -60,9 +61,9 @@ public class Main {
         System.out.println("\nZadanie 8\n");
 
         Electric passat = new Electric("VW", "Passat", 2010);
-        Human me = new Human("Kacper", 4000.2);
-        Human brotherInLow = new Human("Piotrek", 3200.0);
-        me.auto = passat;
+        Human me = new Human("Kacper", 2);
+        Human brotherInLow = new Human("Piotrek", 3);
+        me.setCar(passat,1);
         //me.auto = null;
         //brotherInLow.cash = 100.0;
         brotherInLow.cash = 10000.0;
@@ -87,6 +88,23 @@ public class Main {
         seat.refuel();
         seat2.refuel();
 
+        System.out.println("\nZadanie 11\n");
+
+        Human you = new Human("kacper");
+        Disel ford = new Disel("ford", "focus", 2019) {
+
+        };
+        ford.value = 50000.0;
+        Electric fiat1 = new Electric("fiat", "126p", 1999) {
+
+        };
+        fiat1.value = 1000.0;
+
+        me.setCar(ford, 0);
+        me.setCar(fiat, 2);
+
+        System.out.println("jaka jest wartość wszystkich aut?");
+        System.out.println(me.getValueOfAllCars() + " zł");
     }
 
 }

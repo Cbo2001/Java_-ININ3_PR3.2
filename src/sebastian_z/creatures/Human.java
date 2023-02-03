@@ -7,30 +7,74 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 public class Human extends Animal implements Salleable {
+
+    private static final int DEFAULT_GARAGE_SIZE = 3;
+    private static final Double DEFAULT_HUMAN_WEIGHT = 70.0;
+    private static final Double DEFAULT_START_SALARY = 0.0;
+    private static final String HUMAN_SPECIES = "homo sapiens";
     public String firstName;
     String lastName;
     public Double cash;
     Animal pet;
     public Phone phone;
-    public Car auto;
+
+    //public Car auto; zadanie 11 - usunąć
+    public Car[] garage;
     private Double salary;
 
     public FarmAnimal farmAnimal;
 
-    public Human(String firstName, Double salary) {
+    public Human(String firstName) {
+        super(HUMAN_SPECIES);
+        this.firstName = firstName;
+        this.salary = DEFAULT_START_SALARY;
+        this.weight =DEFAULT_HUMAN_WEIGHT;
+        this.cash=0.0;
+        this.garage = new Car [DEFAULT_GARAGE_SIZE];
+    }
+
+    public Human( String firstName, Integer garageSize) {
         super("homo sapiens");
         this.firstName = firstName;
-        this.salary = 0.0;
-        this.weight =70.0;
-        this.cash=0.0;
+        this.cash = 0.0;
+        this.garage = new Car[garageSize];
+        this.salary = DEFAULT_START_SALARY;
     }
 
 
-
-    public Car getAuto() {
-        return this.auto;
+    public void setCar(Car newCar, Integer parkingLotNumber) {
+        if (parkingLotNumber >= this.garage.length) {
+            System.out.println("sorry, nie mamy tak dużego garażu");
+        } else if (parkingLotNumber < 0) {
+            System.out.println("chyba coś ci na łeb upadło");
+        } else if (this.garage[parkingLotNumber] != null) {
+            System.out.println("sorry miejsce zajęte");
+        } else {
+            this.garage[parkingLotNumber] = newCar;
+        }
     }
 
+    public void getCar( Integer parkingLotNumber) {
+        if (parkingLotNumber >= this.garage.length) {
+            System.out.println("sorry, nie mamy tak dużego garażu");
+        } else if (parkingLotNumber < 0) {
+            System.out.println("chyba coś ci na łeb upadło");
+        } else if (this.garage[parkingLotNumber] != null) {
+            System.out.println("sorry miejsce zajęte");
+        } else {
+            System.out.println("Na tym miejscu parkingowym znajduje się: " + this.garage[parkingLotNumber]);
+        }
+    }
+
+    public Double getValueOfAllCars() {
+        Double valueOfCars = 0.0;
+        for (int i = 0; i < this.garage.length; i++) {
+            if (this.garage[i] != null) {
+                valueOfCars += this.garage[i].value;
+            }
+        }
+        return valueOfCars;
+    }
 
     public Double getSalary() {
         LocalDateTime dateTime = LocalDateTime.now();
@@ -53,12 +97,12 @@ public class Human extends Animal implements Salleable {
     public String toString() {
         return "Human{" +
                 "pet=" + pet +
-                ", auto=" + auto +
+                //", auto=" + auto +
                 ", salary=" + salary +
                 '}';
     }
 
-    public void setAuto(Car auto) {
+    /*public void setAuto(Car auto) {
         if (this.salary > auto.value) {
             System.out.println("\nUdało się kupić auto za gotówkę.");
             this.auto = auto;
@@ -68,7 +112,7 @@ public class Human extends Animal implements Salleable {
         } else {
             System.out.println("\nZapisz się na studia i znajdź nową robotę albo idź po podwyżkę.");
         }
-    }
+    }*/
 @Override
     public void sell(Human seller, Human buyer, Double price){
         System.out.println("Handel ludzmi jest ZAKAZANY!!! 997 ZGŁOŚ SIĘ!!!");
