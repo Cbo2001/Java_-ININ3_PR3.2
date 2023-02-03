@@ -1,9 +1,17 @@
 package sebastian_z.devices;
 
+import sebastian_z.creatures.Human;
+
 public class Lpg extends Car{
     public Lpg(String producer, String model, Integer yearOfProduction) {
         super(producer, model, yearOfProduction);
     }
+
+    @Override
+    public void sell(Human seller, Human buyer, Double price) {
+
+    }
+
     @Override
     public void refuel() {
         System.out.println("Rozpoczęcie procedury tankowania");

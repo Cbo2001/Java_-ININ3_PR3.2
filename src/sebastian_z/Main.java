@@ -91,20 +91,18 @@ public class Main {
         System.out.println("\nZadanie 11\n");
 
         Human you = new Human("kacper");
-        Disel ford = new Disel("ford", "focus", 2019) {
+        Disel ford = new Disel("ford", "focus", 2019);
 
-        };
         ford.value = 50000.0;
-        Electric fiat1 = new Electric("fiat", "126p", 1999) {
+        Electric fiat1 = new Electric("fiat", "126p", 1999);
 
-        };
         fiat1.value = 1000.0;
 
-        me.setCar(ford, 0);
-        me.setCar(fiat, 2);
+        you.setCar(ford, 0);
+        you.setCar(fiat1, 1);
 
         System.out.println("jaka jest wartość wszystkich aut?");
-        System.out.println(me.getValueOfAllCars() + " zł");
+        System.out.println(you.getValueOfAllCars() + " zł");
     }
 
 }
