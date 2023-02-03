@@ -92,17 +92,26 @@ public class Main {
 
         Human you = new Human("kacper");
         Disel ford = new Disel("ford", "focus", 2019);
-
         ford.value = 50000.0;
         Electric fiat1 = new Electric("fiat", "126p", 1999);
-
         fiat1.value = 1000.0;
+        Lpg opel = new Lpg("opel", "corsa", 2009);
+        opel.value = 1500.5;
+
 
         you.setCar(ford, 0);
         you.setCar(fiat1, 1);
+        you.setCar(opel,2);
 
         System.out.println("jaka jest wartość wszystkich aut?");
         System.out.println(you.getValueOfAllCars() + " zł");
+
+        you.getCar(0);
+        you.getCar(1);
+        you.getCar(2);
+
+
+        you.sortAllCarsInGarageByYear();
     }
 
 }

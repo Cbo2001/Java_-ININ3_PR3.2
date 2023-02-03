@@ -5,6 +5,7 @@ import sebastian_z.Salleable;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Arrays;
 
 public class Human extends Animal implements Salleable {
 
@@ -60,7 +61,7 @@ public class Human extends Animal implements Salleable {
         } else if (parkingLotNumber < 0) {
             System.out.println("chyba coś ci na łeb upadło");
         } else if (this.garage[parkingLotNumber] != null) {
-            System.out.println("sorry miejsce zajęte");
+            System.out.println("sorry to miejsce jest puste");
         } else {
             System.out.println("Na tym miejscu parkingowym znajduje się: " + this.garage[parkingLotNumber]);
         }
@@ -74,6 +75,10 @@ public class Human extends Animal implements Salleable {
             }
         }
         return valueOfCars;
+    }
+
+    public void sortAllCarsInGarageByYear() {
+        Arrays.sort(this.garage, (auto1, auto2) -> auto2.yearOfProduction.compareTo(auto1.yearOfProduction));
     }
 
     public Double getSalary() {
