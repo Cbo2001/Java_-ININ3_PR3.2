@@ -36,7 +36,7 @@ public abstract class Car extends Device implements Salleable {
         this.millage += 10.0;
         System.out.println("\nAktualny przebieg to: " + this.millage);
     }
-    @Override
+    /*@Override
     public void sell(Human seller, Human buyer, Double price){
         if(buyer.cash < price){
             System.out.println("Goń się Typie! Nie masz Hajsu Kolo");
@@ -51,7 +51,7 @@ public abstract class Car extends Device implements Salleable {
             System.out.println("Transakcja zakończona: POMYŚLNIE");
         }
 
-    }
+    }*/
     public abstract void refuel();
 }
 
