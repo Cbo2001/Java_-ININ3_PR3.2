@@ -54,7 +54,8 @@ public class Main {
         System.out.println(azor);
 
         System.out.println("\nZadanie 7\n");
-        Phone honor = new Phone("Honor", "x13 Pro", 2017);
+        Human marek = new Human("Marek");
+        Phone honor = new Phone("Honor", "x13 Pro", 2017, marek);
         honor.turnOn();
         seat.turnOn();
 
@@ -116,7 +117,17 @@ public class Main {
         System.out.println("\nZadanie 12\n");
 
 
+        System.out.println("\nZadanie 13\n");
+        Human robert = new Human("Robert");
+        Phone iphone = new Phone("apple", "11lite", 2020, robert);
+        robert.cash = 50.0;
+        Application office = new Application("Office", 365.0, 59.50);
+        Application mBank = new Application("mBank", 1.0, 0.0);
+        Application silownia = new Application("gymFit", 2.5, 15.45);
+        Application mObywatel = new Application("mObywatel", 1.5, 0.0);
 
+        iphone.installApp(office);
+        iphone.installApp(mBank);
     }
 
 }

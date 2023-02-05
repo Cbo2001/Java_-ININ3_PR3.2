@@ -18,7 +18,7 @@ public class Phone extends Device{
 
     private Human owner;
 
-    public Phone(String producer, String model, Integer yearOfProduction) {
+    public Phone(String producer, String model, Integer yearOfProduction, Human owner) {
         super(producer, model, yearOfProduction);
         this.owner = owner;
     }
