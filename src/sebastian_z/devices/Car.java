@@ -36,22 +36,28 @@ public abstract class Car extends Device implements Salleable {
         this.millage += 10.0;
         System.out.println("\nAktualny przebieg to: " + this.millage);
     }
-    /*@Override
+    @Override
     public void sell(Human seller, Human buyer, Double price){
-        if(buyer.cash < price){
-            System.out.println("Goń się Typie! Nie masz Hajsu Kolo");
-        } else if (seller.auto != this) {
+
+        if (!seller.hasCar(this)) {
             System.out.println("Co chcesz sprzedać? Powietrze!");
         }
+        else if (!buyer.emptySpaceInTheGarage()) {
+            System.out.println("Typie gdzie postawisz te auto? Na strychu!");
+        }
+        else if(buyer.cash < price){
+            System.out.println("Goń się Typie! Nie masz Hajsu Kolo");
+        }
+
         else {
             seller.cash += price;
             buyer.cash -= price;
-            buyer.auto = seller.auto;
-            seller.auto = null;
+            buyer.addCar(this);
+            seller.removeCar(this);
             System.out.println("Transakcja zakończona: POMYŚLNIE");
         }
 
-    }*/
+    }
     public abstract void refuel();
 }
 

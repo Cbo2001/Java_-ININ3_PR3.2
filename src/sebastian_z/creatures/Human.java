@@ -81,6 +81,46 @@ public class Human extends Animal implements Salleable {
         Arrays.sort(this.garage, (auto1, auto2) -> auto2.yearOfProduction.compareTo(auto1.yearOfProduction));
     }
 
+    public boolean hasCar(Car car) {
+        boolean hasAuto = false;
+        for (Car value : this.garage) {
+            if (value == car) {
+                hasAuto = true;
+                break;
+            }
+        }
+        return hasAuto;
+    }
+
+    public boolean emptySpaceInTheGarage() {
+        boolean emptySpace = false;
+        for (Car car : this.garage) {
+            if (car == null) {
+                emptySpace = true;
+                break;
+            }
+        }
+        return emptySpace;
+    }
+
+    public void addCar(Car car) {
+        for (int i = 0; i < this.garage.length; i++) {
+            if (this.garage[i] == null) {
+                this.setCar(car, i);
+                break;
+            }
+        }
+    }
+
+    public void removeCar(Car car) {
+        for (int i = 0; i < this.garage.length; i++) {
+            if (this.garage[i] == car) {
+                this.garage[i] = null;
+                break;
+            }
+        }
+    }
+
     public Double getSalary() {
         LocalDateTime dateTime = LocalDateTime.now();
         System.out.println("\nData/godz pobrania danych: " + dateTime.format(DateTimeFormatter.ofPattern("d.M.y HH:mm:ss")));
