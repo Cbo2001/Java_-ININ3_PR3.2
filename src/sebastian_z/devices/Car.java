@@ -3,11 +3,14 @@ package sebastian_z.devices;
 import sebastian_z.creatures.Human;
 import sebastian_z.Salleable;
 
+import java.util.ArrayList;
+
 public abstract class Car extends Device implements Salleable {
 
     public Double millage;
     public Double value;
 
+    public ArrayList<Human> carOwners = new ArrayList<>();
 
     public Car(String producer, String model, Integer yearOfProduction) {
         super(producer, model, yearOfProduction);
