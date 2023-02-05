@@ -2,7 +2,9 @@ package sebastian_z.devices;
 
 import sebastian_z.creatures.Human;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class Phone extends Device{
 
@@ -12,8 +14,13 @@ public class Phone extends Device{
     Double screenSize;
     String androidiOS;
 
+    public Set<Application> applications = new HashSet<>();
+
+    private Human owner;
+
     public Phone(String producer, String model, Integer yearOfProduction) {
         super(producer, model, yearOfProduction);
+        this.owner = owner;
     }
 
     @Override
@@ -56,6 +63,14 @@ public class Phone extends Device{
         System.out.println("ups, nie możesz zainstalować");
         //wypisanie co dokładnie instaluje
     }
+    public void installApp(Application app) {
+        if (this.owner.cash < app.price) {
+            System.out.println("Masz za mało hajsu Typku");
+        }
+        this.applications.add(app);
+        this.owner.cash -= app.price;
+    }
+
     @Override
     public void sell(Human seller, Human buyer, Double price){
        if(buyer.cash < price){
