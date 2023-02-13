@@ -30,5 +30,5 @@ public abstract class Device {
     public  abstract  void turnOn();
 
 
-    public abstract void sell(Human seller, Human buyer, Double price);
+    public abstract void sell(Human seller, Human buyer, Double price) throws Exception;
 }

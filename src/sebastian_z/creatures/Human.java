@@ -9,7 +9,7 @@ import java.util.Arrays;
 
 public class Human extends Animal implements Salleable {
 
-    private static final int DEFAULT_GARAGE_SIZE = 3;
+    private static final int DEFAULT_GARAGE_SIZE = 4;
     private static final Double DEFAULT_HUMAN_WEIGHT = 70.0;
     private static final Double DEFAULT_START_SALARY = 0.0;
     private static final String HUMAN_SPECIES = "homo sapiens";

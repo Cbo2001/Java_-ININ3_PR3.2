@@ -91,7 +91,7 @@ public class Main {
 
         System.out.println("\nZadanie 11\n");
 
-        Human you = new Human("kacper");
+        Human tomek = new Human("Tomek");
         Disel ford = new Disel("ford", "focus", 2019);
         ford.value = 50000.0;
         Electric fiat1 = new Electric("fiat", "126p", 1999);
@@ -100,21 +100,22 @@ public class Main {
         opel.value = 1500.5;
 
 
-        you.setCar(ford, 0);
-        you.setCar(fiat1, 1);
-        you.setCar(opel,2);
+        tomek.setCar(ford, 0);
+        tomek.setCar(fiat1, 1);
+        tomek.setCar(opel,2);
 
         System.out.println("jaka jest wartość wszystkich aut?");
-        System.out.println(you.getValueOfAllCars() + " zł");
+        System.out.println(tomek.getValueOfAllCars() + " zł");
 
-        you.getCar(0);
-        you.getCar(1);
-        you.getCar(2);
+        tomek.getCar(0);
+        tomek.getCar(1);
+        tomek.getCar(2);
 
 
-        //you.sortAllCarsInGarageByYear();
+        //tomek.sortAllCarsInGarageByYear();
 
         System.out.println("\nZadanie 12\n");
+
 
 
         System.out.println("\nZadanie 13\n");
@@ -126,8 +127,9 @@ public class Main {
         Application silownia = new Application("gymFit", 2.5, 15.45);
         Application mObywatel = new Application("mObywatel", 1.5, 0.0);
 
-        iphone.installApp(office);
         iphone.installApp(mBank);
+        iphone.installApp(silownia);
+
     }
 
 }

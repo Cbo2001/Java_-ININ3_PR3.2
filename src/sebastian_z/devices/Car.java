@@ -5,6 +5,9 @@ import sebastian_z.Salleable;
 
 import java.util.ArrayList;
 
+import static java.awt.PageAttributes.MediaType.B;
+import static javax.print.attribute.standard.MediaSizeName.A;
+
 public abstract class Car extends Device implements Salleable {
 
     public Double millage;
@@ -40,19 +43,17 @@ public abstract class Car extends Device implements Salleable {
         System.out.println("\nAktualny przebieg to: " + this.millage);
     }
     @Override
-    public void sell(Human seller, Human buyer, Double price){
+    public void sell(Human seller, Human buyer, Double price) throws Exception {
 
         if (!seller.hasCar(this)) {
-            System.out.println("Co chcesz sprzedać? Powietrze!");
+            throw new Exception("Co chcesz sprzedać? Powietrze!");
         }
         else if (!buyer.emptySpaceInTheGarage()) {
-            System.out.println("Typie gdzie postawisz te auto? Na strychu!");
+            throw new Exception("Typie gdzie postawisz te auto? Na strychu!");
         }
         else if(buyer.cash < price){
-            System.out.println("Goń się Typie! Nie masz Hajsu Kolo");
+            throw new Exception("Goń się Typie! Nie masz Hajsu Kolo");
         }
-
-        else {
             seller.cash += price;
             buyer.cash -= price;
             buyer.addCar(this);
@@ -60,7 +61,9 @@ public abstract class Car extends Device implements Salleable {
             System.out.println("Transakcja zakończona: POMYŚLNIE");
         }
 
-    }
+
+
+
     public abstract void refuel();
 }
 

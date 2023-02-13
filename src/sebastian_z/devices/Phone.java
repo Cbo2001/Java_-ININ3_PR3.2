@@ -69,6 +69,7 @@ public class Phone extends Device{
         }
         this.applications.add(app);
         this.owner.cash -= app.price;
+        System.out.println("Zainstalowano aplikację: "+ app.name);
     }
 
     @Override
