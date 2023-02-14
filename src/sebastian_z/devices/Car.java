@@ -21,17 +21,6 @@ public abstract class Car extends Device implements Salleable {
     }
 
     @Override
-    public String toString() {
-        return "Car{" +
-                "producer='" + producer + '\'' +
-                ", model='" + model + '\'' +
-                ", yearOfProduction=" + yearOfProduction +
-                ", millage=" + millage +
-                ", value=" + value +
-                '}';
-    }
-
-    @Override
     public void turnOn() {
         System.out.println("Przekręcam kluczyk");
         System.out.println("...czekam...");
@@ -51,9 +40,10 @@ public abstract class Car extends Device implements Salleable {
         else if (!buyer.emptySpaceInTheGarage()) {
             throw new Exception("Typie gdzie postawisz te auto? Na strychu!");
         }
-        else if(buyer.cash < price){
+        else if(buyer.cash >= price){
             throw new Exception("Goń się Typie! Nie masz Hajsu Kolo");
         }
+        buyer.addCar(this);
             seller.cash += price;
             buyer.cash -= price;
             buyer.addCar(this);
@@ -62,7 +52,16 @@ public abstract class Car extends Device implements Salleable {
         }
 
 
-
+    @Override
+    public String toString() {
+        return "Car{" +
+                "millage=" + millage +
+                ", value=" + value +
+                ", model='" + model + '\'' +
+                ", producer='" + producer + '\'' +
+                ", yearOfProduction=" + yearOfProduction +
+                '}';
+    }
 
     public abstract void refuel();
 }

@@ -107,12 +107,20 @@ public class Main {
         System.out.println("jaka jest wartość wszystkich aut?");
         System.out.println(tomek.getValueOfAllCars() + " zł");
 
-        tomek.getCar(0);
-        tomek.getCar(1);
+        System.out.println("Kolejność przed sortowaniem 2-1");
         tomek.getCar(2);
+        tomek.getCar(1);
+        tomek.getCar(0);
 
+        System.out.println("Kolejność po sortowaniu 2-1");
 
-        //tomek.sortAllCarsInGarageByYear();
+        tomek.sortCarsByYear();
+        tomek.getCar(2);
+        tomek.getCar(1);
+        tomek.getCar(0);
+
+        System.out.println("Dodanie dodatkowego auta");
+        tomek.setCar(seat,3);
 
         System.out.println("\nZadanie 12\n");
 

@@ -10,13 +10,11 @@ public abstract class Device {
     public Double value;
 
     public Device(String producer, String model, Integer yearOfProduction) {
-        this.model = this.model;
-        this.producer = this.producer;
-        this.yearOfProduction = this.yearOfProduction;
+        this.model = model;
+        this.producer = producer;
+        this.yearOfProduction = yearOfProduction;
         this.value = 0.0;
     }
-
-
 
     @Override
     public String toString() {
@@ -24,6 +22,7 @@ public abstract class Device {
                 "model='" + model + '\'' +
                 ", producer='" + producer + '\'' +
                 ", yearOfProduction=" + yearOfProduction +
+                ", value=" + value +
                 '}';
     }
 

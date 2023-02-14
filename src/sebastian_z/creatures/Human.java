@@ -9,7 +9,7 @@ import java.util.Arrays;
 
 public class Human extends Animal implements Salleable {
 
-    private static final int DEFAULT_GARAGE_SIZE = 4;
+    private static final int DEFAULT_GARAGE_SIZE = 3;
     private static final Double DEFAULT_HUMAN_WEIGHT = 70.0;
     private static final Double DEFAULT_START_SALARY = 0.0;
     private static final String HUMAN_SPECIES = "homo sapiens";
@@ -60,7 +60,7 @@ public class Human extends Animal implements Salleable {
             System.out.println("sorry, nie mamy tak dużego garażu");
         } else if (parkingLotNumber < 0) {
             System.out.println("chyba coś ci na łeb upadło");
-        } else if (this.garage[parkingLotNumber] != null) {
+        } else if (this.garage[parkingLotNumber] == null) {
             System.out.println("sorry to miejsce jest puste");
         } else {
             System.out.println("Na tym miejscu parkingowym znajduje się: " + this.garage[parkingLotNumber]);
@@ -75,10 +75,6 @@ public class Human extends Animal implements Salleable {
             }
         }
         return valueOfCars;
-    }
-
-    public void sortAllCarsInGarageByYear() {
-        Arrays.sort(this.garage, (auto1, auto2) -> auto2.yearOfProduction.compareTo(auto1.yearOfProduction));
     }
 
     public boolean hasCar(Car car) {
@@ -141,9 +137,14 @@ public class Human extends Animal implements Salleable {
     @Override
     public String toString() {
         return "Human{" +
-                "pet=" + pet +
-                //", auto=" + auto +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", cash=" + cash +
+                ", pet=" + pet +
+                ", phone=" + phone +
+                ", garage=" + Arrays.toString(garage) +
                 ", salary=" + salary +
+                ", farmAnimal=" + farmAnimal +
                 '}';
     }
 
@@ -166,5 +167,9 @@ public class Human extends Animal implements Salleable {
     @Override
     public void feed(Double foodWeight) {
 
+    }
+
+    public void sortCarsByYear() {
+        Arrays.sort(this.garage, (b, a) -> a.yearOfProduction.compareTo(b.yearOfProduction));
     }
 }
