@@ -74,7 +74,7 @@ public class Main {
 
         azor.sell(me, brotherInLow, 500.0);
 
-        andrzej.sell(me, brotherInLow, 20.0);
+        seat.sell(me, brotherInLow, 20.0);
 
 
         System.out.println("\nZadanie 9\n");
@@ -123,6 +123,13 @@ public class Main {
         tomek.setCar(seat,3);
 
         System.out.println("\nZadanie 12\n");
+
+        System.out.println("Tomek sprzedał Andrzejowi Opla: " +opel.hasSellCarTo(tomek, andrzej));
+        System.out.println("Tomek jest właścicielem forda: " +ford.wasOwner(tomek));
+        System.out.println("Tomek jest właścicielem seata: " +seat.wasOwner(tomek));
+        opel.sell(tomek, andrzej, 0.0);
+        System.out.println("Czy teraz Tomek sprzedał Andrzejowi Opla: " +passat.hasSellCarTo(me, brotherInLow));
+        System.out.println("Ilość transakcji z udziałem passata: " +passat.numberOfCarTransaction());
 
 
 

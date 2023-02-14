@@ -52,6 +52,7 @@ public class Human extends Animal implements Salleable {
             System.out.println("sorry miejsce zajęte");
         } else {
             this.garage[parkingLotNumber] = newCar;
+            this.garage[parkingLotNumber].carOwners.add(this);
         }
     }
 
@@ -171,5 +172,9 @@ public class Human extends Animal implements Salleable {
 
     public void sortCarsByYear() {
         Arrays.sort(this.garage, (b, a) -> a.yearOfProduction.compareTo(b.yearOfProduction));
+    }
+
+    public boolean lastCarOwner(Car car, Human seller) {
+        return car.carOwners.get(car.carOwners.size() - 1).equals(seller);
     }
 }

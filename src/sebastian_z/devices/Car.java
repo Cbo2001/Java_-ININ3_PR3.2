@@ -37,6 +37,9 @@ public abstract class Car extends Device implements Salleable {
         if (!seller.hasCar(this)) {
             throw new Exception("Co chcesz sprzedać? Powietrze!");
         }
+        else if (!seller.lastCarOwner(this, seller)) {
+            throw new Exception("To nie Twoje auto, Już je sprzedałeś");
+        }
         else if (!buyer.emptySpaceInTheGarage()) {
             throw new Exception("Typie gdzie postawisz te auto? Na strychu!");
         }
@@ -61,6 +64,35 @@ public abstract class Car extends Device implements Salleable {
                 ", producer='" + producer + '\'' +
                 ", yearOfProduction=" + yearOfProduction +
                 '}';
+    }
+
+    public boolean wasOwner(Human person) {
+        return carOwners.contains(person);
+    }
+
+    public boolean hasSellCarTo(Human A, Human B) {
+        boolean aHaveNow = false;
+        boolean bHaveNow = false;
+        if (carOwners.contains(A) && carOwners.contains(B)) {
+            for (int i = 0; i < A.garage.length; i++) {
+                if (A.garage[i] == this) {
+                    aHaveNow = true;
+                    break;
+                }
+            }
+            for (int i = 0; i < B.garage.length; i++) {
+                if (B.garage[i] == this) {
+                    bHaveNow = true;
+                    break;
+                }
+            }
+        }
+        return !aHaveNow && bHaveNow;
+    }
+
+    public int numberOfCarTransaction() {
+        if (this.carOwners.size() > 0) return carOwners.size() - 1;
+        else return 0;
     }
 
     public abstract void refuel();
