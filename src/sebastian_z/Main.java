@@ -137,13 +137,24 @@ public class Main {
         Human robert = new Human("Robert");
         Phone iphone = new Phone("apple", "11lite", 2020, robert);
         robert.cash = 50.0;
-        Application office = new Application("Office", 365.0, 59.50);
+        Application office = new Application("Office", 365.0, 0.50);
         Application mBank = new Application("mBank", 1.0, 0.0);
         Application silownia = new Application("gymFit", 2.5, 15.45);
         Application mObywatel = new Application("mObywatel", 1.5, 0.0);
 
+
         iphone.installApp(mBank);
         iphone.installApp(silownia);
+        iphone.installApp(mObywatel);
+        System.out.println("");
+        System.out.println("Czy aplikacja Office jest zainstalowana: " +iphone.appIsInstaledd("office"));
+        System.out.println("Czy aplikacja mBank jest zainstalowana: " +iphone.appIsInstaledd(mBank));
+        System.out.println("");
+        iphone.allFreeApps();
+        System.out.println("");
+        iphone.allAppsPriceLowToHigh();
+        System.out.println("");
+        iphone.getAllAppsByName();
 
     }
 
